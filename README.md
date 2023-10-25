@@ -3,6 +3,15 @@ A template for a very specific case when one would want for no good reason to ha
 
 This hack arose primarily due to vite-plugin-wasm not having support for Bun currently and secondarily due to the inconsistent way Vite builds WebAssembly with Svelte
 
+# TL;DR
+- Create new directory for Rust
+    - You need to change the directory name in
+    - `.github/workflows/deploy.yml`
+    - `.prettierignore`
+    - `.eslintignore`
+    - `vite.config.ts`
+- Change repo name in `.github/workflows/deploy.yml`
+
 # How to use
 ## Requirements
 - git
@@ -20,7 +29,7 @@ This hack arose primarily due to vite-plugin-wasm not having support for Bun cur
 # Templating
 Things to look out for, in the order of relevance
 1. There is an `src/routes/Example.svelte` file that showcases how one exports WebAssembly to TypeScript (or JavaScript) in Svelte
-2. You need an `onMount` in order for `bun run dev` build to fetch WebAssembly properly. 
+2. You need an `onMount` in order for `bun --bun run dev` build to fetch WebAssembly properly. 
 3. Unfortunately, all the functions you import from WebAssembly have to be declared as variables
 4. That means, because `.wasm` is imported asynchronously, you need to satisfy `CallableFunction` interface on declaration, otherwise Vite server complains
 5. You need to add `server.fs.allow: [<your Rust directory>/pkg]` to `vite.config.ts`, see the file
