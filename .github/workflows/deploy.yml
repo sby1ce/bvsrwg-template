@@ -34,7 +34,7 @@ jobs:
         env:
           BASE_PATH: '/bvsrwg-template'
         run: |
-          bun --bun run build
+          bun --bun run build_
           touch build/.nojekyll
 
 
