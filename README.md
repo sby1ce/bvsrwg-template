@@ -43,7 +43,7 @@ Things to look out for, in the order of relevance
 1. `.nojekyll` in `static`
 2. `.github/workflows/deploy.yml`
 3. `bun.lockb` to `.gitignore`, `.eslintignore`, `.prettierignore`
-4. "allowImportingTsExtensions" in `tsconfig.json`
+4. "allowImportingTsExtensions" and "module": "ES2022" in `tsconfig.json`
 5. static adapter and else in `svelte.config.js`
 6. scripts in `package.json`
 7. added "tabWidth" and removed "pluginSearchDirs" in `.prettierrc`
