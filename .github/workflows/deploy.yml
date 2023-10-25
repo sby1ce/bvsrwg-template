@@ -27,7 +27,7 @@ jobs:
         run: bun install
 
       - name: Build Rust
-        run: wasm-pack build ./example-rust --target web --release
+        run: wasm-pack build ./example-rs --target web --release
 
 
       - name: build
